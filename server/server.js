@@ -7,6 +7,8 @@ var {Todo} = require('./models/todo');
 var {Users} = require('./models/user');
 
 var app = express();
+// local or deploy to Heroku
+const port = process.env.PORT || 4000;
 
 app.use(bodyParser.json());
 
@@ -49,8 +51,8 @@ app.get('/todos/:id',(req,res) => {
 
 });
 
-app.listen(4000, () => {
-  console.log('started on port 4000');
+app.listen(port, () => {
+  console.log(`Started up at port ${port}`);
 });
 
 module.exports = {app};
