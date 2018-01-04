@@ -16,8 +16,6 @@ var hashedPswd = '$2a$10$AA.qIC.Z15tsTBjXq0l.JOXkct9ciRwSBWGHoioe7c6JyRwXkyc4i';
 //  console.log(res);
 //})
 
-
-
 // var data = {
 //   id: 'Dshinji'
 // };
