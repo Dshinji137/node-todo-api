@@ -1,17 +1,18 @@
+const hbs = require('hbs');
 var { User } = require('./../models/user')
 // middleware
 var authenticate = (req,res,next) => {
-  var token = req.header('x-auth');
+  var token = req.body.token;
 
   User.findByToken(token).then((user) => {
     if(!user) {
       return Promise.reject();
     }
-    req.user = user;
-    req.token = token;
+    //req.token = token;
+    
     next();
   }).catch((err) => {
-    res.status(401).send();
+    res.redirect("/");
   })
 };
 

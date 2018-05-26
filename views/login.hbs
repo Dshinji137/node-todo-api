@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do App</title>
+  </head>
+
+  <body>
+
+    <p>{{welcomeMsg}}</p>
+
+    <form action="/toSignup" method="POST">
+      <span>Login</span>
+      <span style="margin-left:30px;"><input type="submit" value="Create a New User"></span>
+    </form>
+
+    <form action ="/login" method="POST">
+      <table>
+        <tr>
+          <td>Email:</td>
+          <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td><input type="password" name="password"></td>
+        </tr>
+      </table>
+      <input type="submit" value="Submit">
+    </form>
+
+    {{errMsg}}
+
+    {{> footer}}
+
+  </body>
+
+
+</html>

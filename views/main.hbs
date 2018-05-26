@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do App</title>
+  </head>
+
+  <body>
+    <h2>{{welcomeMsg}}</h2>
+
+    <form action="/signout" method="POST">
+      <input style="display:none;" name="token" value={{token}}>
+      <input type="submit" value="Sign Out">
+    </form>
+
+    <h2>Manage your To-Do list</h2>
+
+    <h3>Add a Task</h3>
+    <form action="/addtodo" method="POST">
+      <input style="display:none;" name="token" value={{token}}>
+      <input type="text" name="text">
+      <input type="submit" value="Submit">
+    </form>
+
+    <h3>Completed Tasks</h3>
+    {{#listDisplay completed}}
+      {{text}}    completed at {{completedAt}}
+    {{/listDisplay}}
+
+    <h3>To-Do Tasks</h3>
+    {{#listDisplay nonCompleted}}
+      {{text}}
+    {{/listDisplay}}
+
+    {{> footer}}
+
+  </body>
+
+
+</html>
